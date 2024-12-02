@@ -32,6 +32,6 @@ jobs:
           prerelease: false
     - name: Upload Release Asset
       uses: actions/upload-artifact@v3
-        with:
+      with:
           path: /home/runner/work/Seal/Seal/README.md
           upload_url: ${{ steps.create-release.outputs.upload_url }}
