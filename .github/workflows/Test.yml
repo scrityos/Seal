@@ -28,13 +28,13 @@ jobs:
 
     - name: zip source and compiled apks
       run: 
-         zip -r getit_build.zip
+         zip -r /home/runner/work/Seal/Seal/app/build.zip /home/runner/work/Seal/Seal
 
     - name: Upload the zipped files
       uses: actions/upload-artifact@v3
       with:
           name: build
-          path: getit_build.zip
+          path: /home/runner/work/Seal/Seal/app/build.zip
 
     - name: upload build file (just to test if it is uploading or not)
       uses: actions/upload-artifact@v3
