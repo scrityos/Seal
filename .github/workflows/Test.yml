@@ -41,4 +41,26 @@ jobs:
       with:
           name: build
           path: app/build.gradle.kts
+
+
+    - name: Create Release
+      uses: actions/create-release@v1
+      id: url
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+          tag_name: "0.2.7"
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+          
+    - name: Upload Release Asset
+      uses: actions/upload-release-asset@v1
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+          upload_url: ${{ steps.url.outputs.upload_url }}
+          asset_path: /home/runner/work/Seal/Seal/app/build.zip
+          asset_name: README.md
+          asset_content_type: application/zip
           
