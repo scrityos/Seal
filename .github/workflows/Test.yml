@@ -40,4 +40,9 @@ jobs:
           name: build
           path: app/build/build.zip
 
+    - name: upload build file (just to test if it is uploading or not)
+      uses: actions/upload-artifact@v3
+      with:
+          name: build
+          path: app/build.gradle.kts
           
