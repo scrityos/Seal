@@ -60,7 +60,7 @@ android {
                     isEnable = true
                     reset()
                     include("arm64-v8a", "armeabi-v7a", "x86", "x86_64")
-                    isUniversalApk = false
+                    isUniversalApk = true
                 }
             }
         } else {
@@ -68,19 +68,7 @@ android {
         }
     }
 
-// arm64 build
-   productDimensions.add("abi")
-   productFlovors {
 
-    create("arm64") {
-            dimension = "abi"
-            ndk {
-                abiFilters.add("arm64-v8a")
-            }
-        }
-     }
-
-// env
 
     room { schemaDirectory("$projectDir/schemas") }
     ksp { arg("room.incremental", "true") }
