@@ -25,15 +25,14 @@ jobs:
 
     - run: gradle assembleGenericRelease
 
-    - name: Find Latest APK
+   
+    - name: Zip the specific folder
       run:
-          apk_path=$(find . -name "*.apk" -type f -printf '%T+\t%p\n' | sort -r | head -n 1 | cut -f2-)
-          echo "::set-path name=apk_path::$apk_path"
-      id: find-apk
-      
-    - name: Upload APK Artifact
+          cd app/build
+          zip -r build.zip .
+
+    - name: Upload the zipped artifact
       uses: actions/upload-artifact@v3
-      with:
-          name: my-app
-          path: ${{ steps.find-apk.outputs.apk_path }}
-        
+        with:
+          name: build
+          path: app/build/build.zip
