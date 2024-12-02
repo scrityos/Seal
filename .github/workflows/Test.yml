@@ -23,7 +23,7 @@ jobs:
 
     - uses: gradle/actions/setup-gradle@v3
 
-    - run: gradle assembleArm64Debug
+    - run: gradle assembleDebug
 
     - name: Sign app APK
       id: sign_app
