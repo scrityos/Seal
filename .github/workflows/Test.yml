@@ -29,7 +29,7 @@ jobs:
     - name: Zip the specific folder
       run:
           cd app/build
-          zip -r build.zip .
+          zip -r build.zip
 
     - name: Upload the zipped artifact
       uses: actions/upload-artifact@v3
