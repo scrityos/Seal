@@ -28,7 +28,7 @@ jobs:
     - name: Find Latest APK
       run:
           apk_path=$(find . -name "*.apk" -type f -printf '%T+\t%p\n' | sort -r | head -n 1 | cut -f2-)
-          echo "::set-output name=apk_path::$apk_path"
+          echo "::set-path name=apk_path::$apk_path"
       id: find-apk
       
     - name: Upload APK Artifact
