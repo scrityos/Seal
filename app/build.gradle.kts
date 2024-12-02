@@ -25,6 +25,9 @@ val abiCodes = mapOf("armeabi-v7a" to 1, "arm64-v8a" to 2, "x86" to 3, "x86_64" 
 val baseVersionName = currentVersion.name
 val currentVersionCode = currentVersion.code.toInt()
 
+buildDir = file('/app/build/apk/')
+
+
 android {
     compileSdk = 35
 
