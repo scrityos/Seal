@@ -23,19 +23,15 @@ jobs:
 
     - uses: gradle/actions/setup-gradle@v3
 
-    - run: gradle assembleDebug
+    - run: gradle assembleGenericRelease
 
-    - name: Sign app APK
-      id: sign_app
-      uses: ilharp/sign-android-release@nightly
-      with:
-        releaseDir: app/build/outputs/apk/release
-        
+
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
         name: signed-apks
-        path: app/build/outputs/apk/release/*.apk
+        path: app/build/outputs/apk/release/generic/*.apk
         if-no-files-found: error
         retention-days: 20
+        
