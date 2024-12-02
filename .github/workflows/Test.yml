@@ -25,13 +25,15 @@ jobs:
 
     - run: gradle assembleGenericRelease
 
-
-
-    - name: Upload Artifact
-      uses: actions/upload-artifact@v4
+    - name: Find Latest APK
+      run:
+          apk_path=$(find . -name "*.apk" -type f -printf '%T+\t%p\n' | sort -r | head -n 1 | cut -f2-)
+          echo "::set-output name=apk_path::$apk_path"
+      id: find-apk
+      
+    - name: Upload APK Artifact
+      uses: actions/upload-artifact@v3
       with:
-        name: signed-apks
-        path: app/build/outputs/apk/release/*/*.apk
-        if-no-files-found: error
-        retention-days: 20
+          name: my-app
+          path: ${{ steps.find-apk.outputs.apk_path }}
         
