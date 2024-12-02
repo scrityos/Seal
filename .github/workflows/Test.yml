@@ -33,7 +33,7 @@ jobs:
 
     - name: Upload the zipped artifact
       uses: actions/upload-artifact@v3
-        with:
+      with:
           name: build
           path: app/build/build.zip
 
