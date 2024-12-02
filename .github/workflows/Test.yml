@@ -26,10 +26,13 @@ jobs:
     - run: gradle assembleGenericRelease
 
    
-    - name: Zip the specific folder
+    - name: open folder
       run:
-          cd app/build
-          zip -r build.zip
+          cd /app/build
+
+    - name: zip output
+      run: 
+         zip -r build.zip
 
     - name: Upload the zipped artifact
       uses: actions/upload-artifact@v3
