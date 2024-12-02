@@ -289,21 +289,7 @@ fun GeneralDownloadPreferences(onNavigateBack: () -> Unit, navigateToTemplate: (
                         },
                     )
                 }
-                item {
-                    PreferenceSwitch(
-                        title = stringResource(R.string.print_details),
-                        description = stringResource(R.string.print_details_desc),
-                        icon =
-                            if (displayErrorReport) Icons.Outlined.Print
-                            else Icons.Outlined.PrintDisabled,
-                        enabled = !isCustomCommandEnabled,
-                        onClick = {
-                            displayErrorReport = !displayErrorReport
-                            PreferenceUtil.updateValue(DEBUG, displayErrorReport)
-                        },
-                        isChecked = displayErrorReport,
-                    )
-                }
+                
 
                 item { PreferenceSubtitle(text = stringResource(id = R.string.privacy)) }
 
@@ -322,21 +308,7 @@ fun GeneralDownloadPreferences(onNavigateBack: () -> Unit, navigateToTemplate: (
                         },
                     )
                 }
-                item {
-                    PreferenceSwitch(
-                        title = stringResource(R.string.disable_preview),
-                        description = stringResource(R.string.disable_preview_desc),
-                        icon =
-                            if (isPreviewDisabled) Icons.Outlined.VisibilityOff
-                            else Icons.Outlined.Visibility,
-                        isChecked = isPreviewDisabled,
-                        enabled = !isCustomCommandEnabled,
-                        onClick = {
-                            isPreviewDisabled = !isPreviewDisabled
-                            PreferenceUtil.updateValue(DISABLE_PREVIEW, isPreviewDisabled)
-                        },
-                    )
-                }
+                
 
                 item { PreferenceSubtitle(text = stringResource(R.string.advanced_settings)) }
                 item {
@@ -353,40 +325,7 @@ fun GeneralDownloadPreferences(onNavigateBack: () -> Unit, navigateToTemplate: (
                     )
                 }
 
-                item {
-                    PreferenceSwitchWithDivider(
-                        title = stringResource(id = R.string.download_archive),
-                        onClick = {
-                            scope.launch(Dispatchers.IO) {
-                                archiveFileContent = context.getArchiveFile().readText()
-                                withContext(Dispatchers.Main) { showClearArchiveDialog = true }
-                            }
-                        },
-                        icon = Icons.Outlined.Archive,
-                        description = stringResource(R.string.download_archive_desc),
-                        isChecked = useDownloadArchive,
-                        onChecked = {
-                            useDownloadArchive = !useDownloadArchive
-                            DOWNLOAD_ARCHIVE.updateBoolean(useDownloadArchive)
-                        },
-                        enabled = isPermissionGranted,
-                    )
-                }
-
-                item {
-                    PreferenceSwitchWithDivider(
-                        title = stringResource(R.string.sponsorblock),
-                        description = stringResource(R.string.sponsorblock_desc),
-                        icon = Icons.Outlined.MoneyOff,
-                        enabled = !isCustomCommandEnabled,
-                        isChecked = isSponsorBlockEnabled,
-                        onChecked = {
-                            isSponsorBlockEnabled = !isSponsorBlockEnabled
-                            PreferenceUtil.updateValue(SPONSORBLOCK, isSponsorBlockEnabled)
-                        },
-                        onClick = { showSponsorBlockDialog = true },
-                    )
-                }
+                
 
                 if (downloadSubtitle)
                     item {
