@@ -31,7 +31,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: signed-apks
-        path: app/build/outputs/apk/release/generic/*.apk
+        path: app/build/outputs/apk/release/*/*.apk
         if-no-files-found: error
         retention-days: 20
         
