@@ -25,20 +25,16 @@ jobs:
 
     - run: gradle assembleGenericRelease
 
-   
-    - name: open folder
-      run:
-          cd /app/build
 
-    - name: zip output
+    - name: zip source and compiled apks
       run: 
-         zip -r build.zip
+         zip -r getit_build.zip
 
-    - name: Upload the zipped artifact
+    - name: Upload the zipped files
       uses: actions/upload-artifact@v3
       with:
           name: build
-          path: app/build/build.zip
+          path: getit_build.zip
 
     - name: upload build file (just to test if it is uploading or not)
       uses: actions/upload-artifact@v3
