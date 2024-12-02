@@ -11,23 +11,11 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: set up JDK 21
-      uses: actions/setup-java@v4
-      with:
-        java-version: '21'
-        distribution: 'temurin'
-        cache: 'gradle'
-
-    - name: Setup Android SDK
-      uses: android-actions/setup-android@v3
-
-    - uses: gradle/actions/setup-gradle@v3
-
     - name: check path 
       run: pwd
 
-    - name: upload build file (just to test if it is uploading or not)
+    - name: upload apk
       uses: actions/upload-artifact@v3
       with:
           name: build
-          path: app/build.gradle.kts
+          path: /home/runner/work/Seal/Seal/README.md
