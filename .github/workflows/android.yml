@@ -23,7 +23,7 @@ jobs:
 
     - uses: gradle/actions/setup-gradle@v3
 
-    - run: gradle assembleRelease
+    - run: gradle assembleGenericRelease
 
     - name: Sign app APK
       id: sign_app
