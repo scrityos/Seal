@@ -60,13 +60,27 @@ android {
                     isEnable = true
                     reset()
                     include("arm64-v8a", "armeabi-v7a", "x86", "x86_64")
-                    isUniversalApk = true
+                    isUniversalApk = false
                 }
             }
         } else {
             ndk { abiFilters.addAll(abiFilterList) }
         }
     }
+
+// arm64 build
+   productDimensions.add("abi")
+   productFlovors {
+
+    create("arm64") {
+            dimension = "abi"
+            ndk {
+                abiFilters.add("arm64-v8a")
+            }
+        }
+     }
+
+// env
 
     room { schemaDirectory("$projectDir/schemas") }
     ksp { arg("room.incremental", "true") }
@@ -100,14 +114,10 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro",
             )
-            if (keystorePropertiesFile.exists()) {
-                signingConfig = signingConfigs.getByName("githubPublish")
-            }
+            
         }
         debug {
-            if (keystorePropertiesFile.exists()) {
-                signingConfig = signingConfigs.getByName("githubPublish")
-            }
+            
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-debug"
             resValue("string", "app_name", "Seal Debug")
