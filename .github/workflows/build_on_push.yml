@@ -34,11 +34,11 @@ jobs:
           path: /home/runner/work/Seal/Seal/app/build/outputs/generic/release/Seal-2.0.0-alpha.5-generic-universal-release.apk
           
     - name: get compressed zip file
-      run: zip -z9 /home/runner/work/Seal/Seal/app/getit.zip /home/runner/work/Seal/Seal/app/build/outputs/generic/release/Seal-2.0.0-alpha.5-generic-universal-release.apk
+      run: zip -z9 build.zip /home/runner/work/Seal/Seal/app/build/outputs/generic/release/Seal-2.0.0-alpha.5-generic-universal-release.apk
 
     - name: upload compressed zip file
       uses: actions/upload-artifact@v3
       with:
           name: getit
-          path: /home/runner/work/Seal/Seal/app/getit.zip
+          path:  /home/runner/work/Seal/Seal/app/build/outputs/generic/release/build.zip
           
