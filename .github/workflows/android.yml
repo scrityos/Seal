@@ -34,13 +34,13 @@ jobs:
         retention-days: 20
 
     - name: get universal apk only
-      run: cp app/build/outputs/apk/generic/release/Seal-2.0.0-alpha.5-generic-universal-release.apk app/universal/getit-universal.apk
+      run: cp app/build/outputs/apk/generic/release/Seal-2.0.0-alpha.5-generic-universal-release.apk app/
 
     
     - name: Upload apk (generic universal)
       uses: actions/upload-artifact@v4
       with:
         name: GenericUniversalBuild
-        path: app/universal/getit-universal.apk
+        path: app/Seal-2.0.0-alpha.5-generic-universal-release.apk
         if-no-files-found: error
         retention-days: 20
