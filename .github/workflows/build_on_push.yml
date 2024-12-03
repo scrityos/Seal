@@ -27,40 +27,18 @@ jobs:
     - run: gradle assembleGenericRelease
 
 
-    - name: zip source and compiled apks
-      run: 
-         zip -r /home/runner/work/Seal/Seal/app/build.zip /home/runner/work/Seal/Seal
-
-    - name: Upload the zipped files
-      uses: actions/upload-artifact@v3
-      with:
-          name: build
-          path: /home/runner/work/Seal/Seal/app/build.zip
-
     - name: upload universal build 
       uses: actions/upload-artifact@v3
       with:
           name: build
           path: /home/runner/work/Seal/Seal/app/build/outputs/generic/release/Seal-2.0.0-alpha.5-generic-universal-release.apk
-
-
-    - name: Create Release
-      uses: actions/create-release@v1
-      id: url
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-          tag_name: "5.8"
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
           
-    - name: Upload Release Asset
-      uses: actions/upload-release-asset@v1
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: get compressed zip file
+      run: zip -z9 /home/runner/work/Seal/Seal/app/getit.zip /home/runner/work/Seal/Seal/app/build/outputs/generic/release/Seal-2.0.0-alpha.5-generic-universal-release.apk
+
+    - name: upload compressed zip file
+      uses: actions/upload-artifact@v3
       with:
-          upload_url: ${{ steps.url.outputs.upload_url }}
-          asset_path: /home/runner/work/Seal/Seal/app/build.zip
-          asset_name: README.md
-          asset_content_type: application/zip
+          name: getit
+          path: /home/runner/work/Seal/Seal/app/getit.zip
+          
