@@ -1,4 +1,4 @@
-name: Build test
+name: push universal apk/zip to release
 
 on:
   push:
