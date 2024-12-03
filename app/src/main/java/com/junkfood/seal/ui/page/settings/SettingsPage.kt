@@ -197,33 +197,6 @@ fun SettingsPage(onNavigateBack: () -> Unit, onNavigateTo: (String) -> Unit) {
             }
             item {
                 SettingItem(
-                    title = stringResource(id = R.string.look_and_feel),
-                    description = stringResource(id = R.string.display_settings),
-                    icon = Icons.Rounded.Palette,
-                ) {
-                    onNavigateTo(Route.APPEARANCE)
-                }
-            }
-            item {
-                SettingItem(
-                    title = stringResource(id = R.string.interface_and_interaction),
-                    description = stringResource(id = R.string.settings_before_download),
-                    icon = Icons.Rounded.ViewComfy,
-                ) {
-                    onNavigateTo(Route.INTERACTION)
-                }
-            }
-            item {
-                SettingItem(
-                    title = stringResource(R.string.trouble_shooting),
-                    description = stringResource(R.string.trouble_shooting_desc),
-                    icon = Icons.Rounded.BugReport,
-                ) {
-                    onNavigateTo(Route.TROUBLESHOOTING)
-                }
-            }
-            item {
-                SettingItem(
                     title = stringResource(id = R.string.about),
                     description = stringResource(id = R.string.about_page),
                     icon = Icons.Rounded.Info,
