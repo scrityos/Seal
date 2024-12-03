@@ -1,0 +1,55 @@
+name: push source
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: set up JDK 21
+      uses: actions/setup-java@v4
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+        cache: 'gradle'
+
+
+
+    - name: zip source 
+      run: 
+         zip -r /home/runner/work/Seal/Seal/app /home/runner/work/Seal/Seal/app.zip
+
+    
+
+    - name: upload build file (just to test if it is uploading or not)
+      uses: actions/upload-artifact@v3
+      with:
+          name: build
+          path: app/build.gradle.kts
+
+
+    - name: Create Release
+      uses: actions/create-release@v1
+      id: url
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+          tag_name: "10.3.2"
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+          
+    - name: Upload Release Asset
+      uses: actions/upload-release-asset@v1
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+          upload_url: ${{ steps.url.outputs.upload_url }}
+          asset_path: /home/runner/work/Seal/Seal/app.zip
+          asset_name: app.zip
+          asset_content_type: application/zip
