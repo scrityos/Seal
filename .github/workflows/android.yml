@@ -33,10 +33,13 @@ jobs:
         if-no-files-found: error
         retention-days: 20
 
+    - name: get arm64 apk only
+      run: mv app/build/outputs/apk/generic/release/Seal-2.0.0-alpha.5-generic-arm64-v8a-release.apk app/build/outputs/apk/generic/release/getit-arm64.apk
+    
     - name: Upload Arm64 apk 
       uses: actions/upload-artifact@v4
       with:
         name: signed-apks
-        path: app/build/outputs/apk/generic/release/Seal-2.0.0-alpha.5-generic-arm64-v8a-release.apk
+        path: app/build/outputs/apk/generic/release/getit-arm64.apk
         if-no-files-found: error
         retention-days: 20
