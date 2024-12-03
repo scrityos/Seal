@@ -196,16 +196,6 @@ fun NavigationDrawerSheetContent(
                 selected = currentRoute == Route.DOWNLOADS,
             )
             NavigationDrawerItem(
-                label = { Text(stringResource(R.string.custom_command)) },
-                icon = { Icon(Icons.Outlined.Terminal, null) },
-                onClick = {
-                    scope
-                        .launch { onDismissRequest() }
-                        .invokeOnCompletion { onNavigateToRoute(Route.TASK_LIST) }
-                },
-                selected = currentRoute == Route.TASK_LIST,
-            )
-            NavigationDrawerItem(
                 label = { Text(stringResource(R.string.settings)) },
                 icon = { Icon(Icons.Outlined.Settings, null) },
                 onClick = {
@@ -216,16 +206,6 @@ fun NavigationDrawerSheetContent(
                 selected = currentRoute == Route.SETTINGS_PAGE,
             )
 
-            NavigationDrawerItem(
-                label = { Text(stringResource(R.string.sponsor)) },
-                icon = { Icon(Icons.Outlined.VolunteerActivism, null) },
-                onClick = {
-                    scope
-                        .launch { onDismissRequest() }
-                        .invokeOnCompletion { onNavigateToRoute(Route.DONATE) }
-                },
-                selected = currentRoute == Route.DONATE,
-            )
 
             if (showQuickSettings) {
                 HorizontalDivider(modifier = Modifier.padding(vertical = 4.dp))
@@ -234,65 +214,15 @@ fun NavigationDrawerSheetContent(
                     modifier = Modifier.padding(start = 16.dp).padding(top = 16.dp, bottom = 12.dp),
                     verticalArrangement = Arrangement.Center,
                 ) {
-                    Text(
-                        stringResource(R.string.settings),
-                        style = MaterialTheme.typography.labelLarge,
-                        color = MaterialTheme.colorScheme.tertiary,
-                        modifier = Modifier,
-                    )
+                    
                 }
 
-                NavigationDrawerItem(
-                    label = { Text(stringResource(R.string.general_settings)) },
-                    icon = { Icon(Icons.Rounded.SettingsApplications, null) },
-                    onClick = {
-                        scope
-                            .launch { onDismissRequest() }
-                            .invokeOnCompletion {
-                                onNavigateToRoute(Route.GENERAL_DOWNLOAD_PREFERENCES)
-                            }
-                    },
-                    selected = currentRoute == Route.GENERAL_DOWNLOAD_PREFERENCES,
-                )
-
-                NavigationDrawerItem(
-                    label = { Text(stringResource(R.string.download_directory)) },
-                    icon = { Icon(Icons.Rounded.Folder, null) },
-                    onClick = {
-                        scope
-                            .launch { onDismissRequest() }
-                            .invokeOnCompletion { onNavigateToRoute(Route.DOWNLOAD_DIRECTORY) }
-                    },
-                    selected = currentRoute == Route.DOWNLOAD_DIRECTORY,
-                )
-
-                NavigationDrawerItem(
-                    label = { Text(stringResource(R.string.cookies)) },
-                    icon = { Icon(Icons.Rounded.Cookie, null) },
-                    onClick = {
-                        scope
-                            .launch { onDismissRequest() }
-                            .invokeOnCompletion { onNavigateToRoute(Route.COOKIE_PROFILE) }
-                    },
-                    selected = currentRoute == Route.COOKIE_PROFILE,
-                )
-
-                NavigationDrawerItem(
-                    label = { Text(stringResource(R.string.trouble_shooting)) },
-                    icon = { Icon(Icons.Rounded.BugReport, null) },
-                    onClick = {
-                        scope
-                            .launch { onDismissRequest() }
-                            .invokeOnCompletion { onNavigateToRoute(Route.TROUBLESHOOTING) }
-                    },
-                    selected = currentRoute == Route.TROUBLESHOOTING,
-                )
-
+                
                 NavigationDrawerItem(
                     label = { Text(stringResource(R.string.about)) },
                     icon = { Icon(Icons.Rounded.Info, null) },
                     onClick = {
-                        scope
+                             scope
                             .launch { onDismissRequest() }
                             .invokeOnCompletion { onNavigateToRoute(Route.ABOUT) }
                     },

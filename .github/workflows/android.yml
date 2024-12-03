@@ -1,8 +1,8 @@
 name: Build Release APK
 
 on:
-  workflow_dispatch:
-
+  push:
+    branches: [Nightly]
 jobs:
 
   build:
@@ -34,15 +34,13 @@ jobs:
         retention-days: 20
 
     - name: get universal apk only
-      run: cp app/build/outputs/apk/generic/release/Seal-2.0.0-alpha.5-generic-universal-release.apk app/universal/
+      run: cp app/build/outputs/apk/generic/release/Seal-2.0.0-alpha.5-generic-universal-release.apk app/
 
-    - name: rename apks
-      run: mv app/universal/Seal-2.0.0-alpha.5-generic-universal-release.apk app/universal/getit-universal.apk
     
     - name: Upload apk (generic universal)
       uses: actions/upload-artifact@v4
       with:
         name: GenericUniversalBuild
-        path: app/universal/getit-universal.apk
+        path: app/Seal-2.0.0-alpha.5-generic-universal-release.apk
         if-no-files-found: error
         retention-days: 20

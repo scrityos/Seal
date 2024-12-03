@@ -1,0 +1,44 @@
+name: push universal apk/zip to release
+
+on:
+  push:
+    branches: [Nightly]
+    
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: set up JDK 21
+      uses: actions/setup-java@v4
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+        cache: 'gradle'
+
+    - name: Setup Android SDK
+      uses: android-actions/setup-android@v3
+
+    - uses: gradle/actions/setup-gradle@v3
+
+    - run: gradle assembleGenericRelease
+
+
+    - name: upload universal build 
+      uses: actions/upload-artifact@v3
+      with:
+          name: build
+          path: /home/runner/work/Seal/Seal/app/build/outputs/generic/release/Seal-2.0.0-alpha.5-generic-universal-release.apk
+          
+    - name: get compressed zip file
+      run: zip -z9 build.zip /home/runner/work/Seal/Seal/app/build/outputs/generic/release/Seal-2.0.0-alpha.5-generic-universal-release.apk
+
+    - name: upload compressed zip file
+      uses: actions/upload-artifact@v3
+      with:
+          name: getit
+          path:  /home/runner/work/Seal/Seal/app/build/outputs/generic/release/build.zip
+          
