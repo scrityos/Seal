@@ -37,6 +37,6 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: signed-apks
-        path: app/build/outputs/apk/generic/release/*arm64-v8a-release.apk
+        path: app/build/outputs/apk/generic/release/Seal-2.0.0-alpha.5-generic-arm64-v8a-release.apk
         if-no-files-found: error
         retention-days: 20
