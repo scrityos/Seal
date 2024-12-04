@@ -41,10 +41,10 @@
     <string name="about_page">Version, feedback, auto update</string>
     <string name="back">Back</string>
     <string name="version">Version</string>
-    <string name="release_desc">Look for changelogs and new versions</string>
-    <string name="release">Latest release</string>
-    <string name="readme_desc">Check the GitHub repository and the README</string>
-    <string name="readme" translatable="false">README</string>
+    <string name="release_desc">Get latest version from github release.</string>
+    <string name="release">Get Latest release</string>
+    <string name="readme_desc">open GitHub repository</string>
+    <string name="readme" translatable="false">Developed by abhiram79</string>
     <string name="video">Video</string>
     <string name="checked">Checked</string>
     <string name="credits">Credits</string>
@@ -133,7 +133,7 @@
     <string name="permission_issue_desc">Directories outside Download/ and Documents/ are not supported</string>
     <string name="battery_configuration">Battery configuration</string>
     <string name="battery_configuration_desc">Ignore battery optimization for this app to download in the background</string>
-    <string name="service_title">Seal is downloading…</string>
+    <string name="service_title">Getit is downloading...</string>
     <string name="unknown_error">Unknown error</string>
     <string name="translate">Translate</string>
     <string name="translate_desc">Help translate this app on Hosted Weblate</string>
@@ -232,7 +232,7 @@
     <string name="custom_command_enabled_hint">Some options are unavailable when using custom command</string>
     <string name="how_does_it_work">How does it work?</string>
     <string name="cookies_usage_msg">Downloading from some sites requires account authentication information. Click \"Generate new cookies\", enter the URL of the website and then log in with your account in the browser page, the app will generate it for you.</string>
-    <string name="custom_command_usage_msg">yt-dlp is a powerful command-line tool for downloading videos. Seal makes it easier to use yt-dlp by providing an intuitive GUI, presets for common commands, and other additional features.\n\nFor advanced usage of yt-dlp, Seal allows you to create, save and execute custom command templates directly, just like in a terminal.\n\nWhen using custom commands, most of the GUI options and features would be disabled.</string>
+    <string name="custom_command_usage_msg">yt-dlp is a powerful command-line tool for downloading videos. Getit makes it easier to use yt-dlp by providing an intuitive GUI, and other additional features.</string>
     <string name="telegram_channel">Telegram channel</string>
     <string name="matrix_space">Matrix space</string>
     <string name="sdcard_directory">SD card folder</string>
@@ -260,10 +260,10 @@
     <string name="filesize_mb">%.2f MB</string>
     <string name="filesize_gb">%.2f GB</string>
     <string name="share">Share</string>
-    <string name="stable_channel">Stable</string>
-    <string name="pre_release_channel">Preview</string>
+    <string name="stable_channel">Stable Release</string>
+    <string name="pre_release_channel">Beta Release</string>
     <string name="update_channel_desc">Install pre-release builds to preview new features and changes.\n\nThere will be some instability in these versions, so please don\'t hesitate to give us feedback if you experience any problems to help us improve the app for the future.</string>
-    <string name="update_channel">Update channel</string>
+    <string name="update_channel">Select Update channel</string>
     <string name="auto_update">Auto update</string>
     <string name="enable_auto_update">Enable auto update</string>
     <string name="discard">Discard</string>
@@ -288,7 +288,7 @@
     <string name="temporary_directory_desc">Store temporary files in the internal directory</string>
     <string name="sponsor">Sponsor</string>
     <string name="sponsor_desc">Support this app by sponsoring on GitHub</string>
-    <string name="sponsor_msg">Seal will be always free and open source for everyone. If you like it, please consider sponsoring me on GitHub!</string>
+    <string name="sponsor_msg">Getit will be always free and open source for everyone. If you like it, please consider sponsoring me on GitHub!</string>
     <string name="feedback">Feedback</string>
     <string name="sponsors">Sponsors</string>
     <string name="audio_format">Audio format</string>
@@ -299,7 +299,7 @@
     <string name="clip_video_desc">Make video clips in the format selection page</string>
     <string name="embed_thumbnail" translatable="false">Embed thumbnail</string>
     <string name="embed_thumbnail_desc" translatable="false">Embed thumbnails into videos</string>
-    <string name="auto_update_disabled_msg">Auto-update is not available for %1$s builds. If you don\'t have %1$s installed on your device, or would like to preview upcoming new features in Seal, please consider %2$s.</string>
+    <string name="auto_update_disabled_msg">Auto-update is not available for %1$s builds. If you don\'t have %1$s installed on your device, or would like to preview upcoming new features in Getit, please consider %2$s.</string>
     <string name="switch_to_github_builds">switching to GitHub builds</string>
     <string name="okay">Okay</string>
     <string name="got_it">Got it</string>
@@ -312,7 +312,7 @@
     <string name="convert_subtitle_desc">Convert the subtitles to another format</string>
     <string name="split_video">Split video</string>
     <string name="split_video_msg">Video will be split into %1$d chapters</string>
-    <string name="unknown_error_title">Oops! Something went wrong</string>
+    <string name="unknown_error_title">Something went wrong</string>
     <string name="copy_and_exit">Copy and exit</string>
     <string name="expand">Expand</string>
     <string name="new_task">New download task</string>
@@ -323,7 +323,7 @@
     <string name="legacy">Legacy</string>
     <string name="quality">Quality</string>
     <string name="enable_notifications">Enable notifications?</string>
-    <string name="enable_notifications_desc">The app needs your permission to post notifications about download status and progress.</string>
+    <string name="enable_notifications_desc">Getit needs your permission to post notifications about download status and progress.</string>
     <string name="disable">Disable</string>
     <string name="set_directory_desc">Tap to set up directory</string>
     <string name="custom_command_directory">Custom command directory</string>
