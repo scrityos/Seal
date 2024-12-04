@@ -206,7 +206,8 @@
     <string name="high_contrast">High contrast dark theme</string>
     <string name="invalid_input">Invalid input</string>
     <string name="lowest_quality">Lowest quality</string>
-    <string name="download_queue">Getit Downloader</string>
+    <string name="download_queue">Getit</string>
+    <string name="download_navv">Downloader</string>
     <string name="unavailable">Unavailable</string>
     <string name="format_settings_desc">File format, video quality, subtitles</string>
     <string name="general_settings_desc">Yt-dlp version, notification, playlist</string>
