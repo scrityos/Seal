@@ -47,7 +47,7 @@ android {
 
     defaultConfig {
         applicationId = "com.abhiram79.getit"
-        minSdk = 22
+        minSdk = 24
         targetSdk = 35
         versionCode = 200_000_150
         check(versionCode == currentVersionCode)
